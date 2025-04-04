@@ -97,8 +97,8 @@ const Navbar = () => {
 
       {/* Sign In Modal */}
       {isSignInModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
-          <div className="bg-white bg-opacity-90 backdrop-blur-lg p-8 rounded-lg shadow-lg w-[90%] max-w-[600px]">
+        <div className="fixed inset-0 bg-transparent bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="bg-transparent bg-opacity-90 backdrop-blur-lg p-8 rounded-lg shadow-lg w-[90%] max-w-[600px]">
             <h2 className="text-2xl font-semibold mb-6 text-center">Sign In</h2>
             <form>
               <div className="mb-4">
@@ -136,8 +136,8 @@ const Navbar = () => {
 
       {/* Create Account Modal */}
       {isCreateAccountModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
-          <div className="bg-white bg-opacity-90 backdrop-blur-lg p-8 rounded-lg shadow-lg w-[90%] max-w-[600px]">
+        <div className="fixed inset-0 bg-transparent bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="bg-transparent bg-opacity-90 backdrop-blur-lg p-8 rounded-lg shadow-lg w-[90%] max-w-[600px]">
             <h2 className="text-2xl font-semibold mb-6 text-center">Create Account</h2>
             <form>
               <div className="mb-4">
