@@ -31,23 +31,26 @@ const Workflow = () => {
           {" "}coding workflow
         </span>
       </h2>
-      <div className="flex p-8 flex-wrap justify-center">
-      <div className="relative w-full lg:w-1/2 h-150 overflow-hidden">
-  <img
-    src={images[currentImage]}
-    alt="Code Workflow"
-    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-500 ease-in-out hover:scale-110"
-  />
-</div>
+      <div className="flex flex-wrap justify-center items-center p-4 lg:p-8">
+        {/* Image Section */}
+        <div className="relative w-full lg:w-1/2 h-64 lg:h-96 overflow-hidden">
+          <img
+            src={images[currentImage]}
+            alt="Code Workflow"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+          />
+        </div>
+
+        {/* Checklist Section */}
         <div className="pt-12 w-full lg:w-1/2">
           {checklistItems.map((item, index) => (
-            <div key={index} className="flex mb-12">
-              <div className="text-green-400 mx-6 bg-neutral-900 h-10 w-10 p-2 justify-center items-center rounded-full">
+            <div key={index} className="flex mb-8 lg:mb-12">
+              <div className="text-green-400 mx-4 lg:mx-6 bg-neutral-900 h-10 w-10 p-2 flex justify-center items-center rounded-full">
                 <CheckCircle2Icon />
               </div>
               <div>
-                <h5 className="mt-1 mb-2 text-xl">{item.title}</h5>
-                <p className="text-md text-neutral-500">{item.description}</p>
+                <h5 className="mt-1 mb-2 text-lg lg:text-xl">{item.title}</h5>
+                <p className="text-sm lg:text-md text-neutral-500">{item.description}</p>
               </div>
             </div>
           ))}
