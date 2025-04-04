@@ -22,35 +22,35 @@ const Pricing = () => {
         Choose Your Plan
       </h2>
 
-      <div className="flex flex-col p-20 lg:flex-row justify-center gap-4 items-stretch">
-  {pricingOptions.map((option, index) => (
-    <div
-      key={index}
-      className="flex-1 p-9 border rounded-lg shadow-lg max-w-sm"
-    >
-      <h3 className="text-2xl font-semibold mb-4">{option.title}</h3>
-      <p className="mb-8">
-        <span className="text-5xl mt-6 mr-2">{option.price}</span>
-        <span className="text-neutral-400 tracking-tight">/month</span>
-      </p>
-      <ul>
-        {option.features.map((feature, i) => (
-          <li key={i} className="flex items-center mt-4">
-            <CheckCircle2 />
-            <span className="ml-2">{feature}</span>
-          </li>
+      {/* Pricing Cards Container */}
+      <div className="flex flex-wrap justify-center gap-6 p-4 lg:p-8">
+        {pricingOptions.map((option, index) => (
+          <div
+            key={index}
+            className="flex flex-col p-6 border rounded-lg shadow-lg w-full sm:w-[90%] md:w-[80%] lg:w-[30%] max-w-sm"
+          >
+            <h3 className="text-2xl font-semibold mb-4 text-center">{option.title}</h3>
+            <p className="mb-8 text-center">
+              <span className="text-5xl mt-6 mr-2">{option.price}</span>
+              <span className="text-neutral-400 tracking-tight">/month</span>
+            </p>
+            <ul>
+              {option.features.map((feature, i) => (
+                <li key={i} className="flex items-center mt-4">
+                  <CheckCircle2 className="text-green-500 h-5 w-5" />
+                  <span className="ml-2">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => toggleModal(option.title)}
+              className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-10 tracking-tight text-xl hover:bg-orange-900 border-orange-900 rounded-lg transition duration-200"
+            >
+              Subscribe
+            </button>
+          </div>
         ))}
-      </ul>
-      <button
-        onClick={() => toggleModal(option.title)}
-        className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-10 tracking-tight text-xl hover:bg-orange-900 border-orange-900 border rounded-lg transition duration-200"
-      >
-        Subscribe
-      </button>
-    </div>
-  ))}
-</div>
-
+      </div>
 
       {/* Modal */}
       {isModalOpen && (
